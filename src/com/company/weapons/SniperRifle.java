@@ -7,4 +7,4 @@ public class SniperRifle extends Weapon {
         super(firingRange, firingRate, shotEnergy);
     }
 }
-}
+
