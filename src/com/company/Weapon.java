@@ -12,7 +12,7 @@ public class Weapon {
         this.firingRate = firingRate;
         this.shotEnergy = shotEnergy;
     }
-    public String getShot(){
+    public String getShot() {
         StringBuilder builderShot = new StringBuilder();
         for (int range=1; range <= this.firingRange; range++){
             builderShot = builderShot.append("░");
@@ -24,7 +24,6 @@ public class Weapon {
         for (int energy= 1 ; energy <= shotEnergy; energy++){
             builderShot.append("█");
         }
-        builderShot.append("D");
         return builderShot.toString();
     }
 
