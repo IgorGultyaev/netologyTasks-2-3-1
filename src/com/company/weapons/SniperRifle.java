@@ -9,7 +9,6 @@ public class SniperRifle extends Weapon {
 
     @Override
     public String getShot() {
-
         return super.getShot()+"=D";
     }
 }

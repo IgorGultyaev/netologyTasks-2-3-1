@@ -11,7 +11,6 @@ public class CombatKnife extends Weapon {
     public String getShot() {
         switch (this.shotEnergy){
             case(1):
-
             return "-═══════ι▬▬";
             case(2):
                 return "<%%%%|==========>";

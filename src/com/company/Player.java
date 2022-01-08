@@ -12,7 +12,11 @@ public class Player {
         return this.weaponSlot.length;
     }
     public void shotWithWeapon(int slot){
-        if (getSlotCount() > 0 && slot < getSlotCount())
+        if (getSlotCount() > 0 && slot < getSlotCount()-1 && slot >= 0)
             System.out.println(weaponSlot[slot].getShot());
+        else System.out.println("there are no weapons in this slot");
+    }
+    public String getName(){
+        return this.name;
     }
 }

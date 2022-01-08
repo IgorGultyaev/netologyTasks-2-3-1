@@ -3,11 +3,13 @@ package com.company.weapons;
 import com.company.Weapon;
 
 public class Guns extends Weapon {
+    private String shot;
     public Guns(int firingRange, int firingRate, int shotEnergy) {
         super((firingRange>3) ? 3 : firingRange, firingRate, shotEnergy);
         }
     @Override
     public String getShot() {
+        this.firingRange =  this.firingRange>3 ? 3 : this.firingRange;
         StringBuilder builderShot = new StringBuilder();
         for (int range=1; range <= this.firingRange; range++){
 
@@ -16,14 +18,10 @@ public class Guns extends Weapon {
             }
             for (int energy= 1 ; energy <= shotEnergy; energy++){
                 builderShot.append("■");
-                //Thread.sleep(1000);
             }
             builderShot.append("□D");
-
+            this.shot = builderShot.toString();
         }
-//        builderShot.append(" ");
-
-        return builderShot.toString();
+        return this.shot;
     }
 }
-//▣□■ツD▣

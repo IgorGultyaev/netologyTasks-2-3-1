@@ -6,31 +6,34 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static int rnd(int min,int max){
+        return (int) (Math.random() * ++max) + min;
+    }
+    public static Weapon [] setting (){
+        Weapon[] weapon = new Weapon[7];
+        weapon[0] = new Guns(rnd(1,10),rnd(1,10),rnd(1,10));
+        weapon[1] = new Minigun(rnd(1,10),rnd(1,10),rnd(1,9),rnd(1,3));
+        weapon[2] = new SniperRifle(rnd(1,10),rnd(1,10),rnd(1,10));
+        weapon[3] = new CombatKnife(rnd(1,9));
+        weapon[4] = new AssaultRifle(rnd(1,10),rnd(1,10),rnd(1,10));
+        weapon[5] = new AssaultRifle(rnd(1,10),rnd(1,10));
+        return weapon;
+    }
     public static void main(String[] args) {
-        Player player = new Player("Winner",
-                new Guns(5,10,3),
-                new Minigun(10,10,8,1),
-                new SniperRifle(10,10,8),
-                new CombatKnife(10),
-                new AssaultRifle(10,10,5),
-                new AssaultRifle(10,10,5, true)
-                );
-        Scanner scanner = new Scanner(System.in);
-        int slot = scanner.nextInt();
-        player.shotWithWeapon(slot);
+        Player player = new Player("Winner", setting());
+        System.out.format("У %s %d слотов с оружием, "
+                        + "Введите номер, чтобы выстрелить,"
+                        + " -1 чтобы выйти%n",
+                player.getName(),
+                player.getSlotCount());
 
-//        Weapon[] weapon = new Weapon[7];
-//        weapon[0] = new Guns(5,10,3);
-//        weapon[1] = new Minigun(10,10,8,1);
-//        weapon[2] = new SniperRifle(10,10,8);
-//        weapon[3] = new CombatKnife(10);
-//        weapon[4] = new AssaultRifle(10,10,5);
-//        weapon[5] = new AssaultRifle(10,10,3, true);
-//        System.out.println(weapon[0].getShot());
-//        System.out.println(weapon[1].getShot());
-//        System.out.println(weapon[2].getShot());
-//        System.out.println(weapon[3].getShot());
-//        System.out.println(weapon[4].getShot());
-//        System.out.println(weapon[5].getShot());
+        Scanner scanner = new Scanner(System.in);
+        int slot = 1;
+        while (slot != -1){
+            slot = scanner.nextInt();
+            player.shotWithWeapon(slot-1);
+        }
+        System.out.println("Game over!");
+
     }
 }
