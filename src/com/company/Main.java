@@ -10,7 +10,7 @@ public class Main {
         return (int) (Math.random() * ++max) + min;
     }
     public static Weapon [] setting (){
-        Weapon[] weapon = new Weapon[7];
+        Weapon[] weapon = new Weapon[6];
         weapon[0] = new Guns(rnd(1,10),rnd(1,10),rnd(1,10));
         weapon[1] = new Minigun(rnd(1,10),rnd(1,10),rnd(1,9),rnd(1,3));
         weapon[2] = new SniperRifle(rnd(1,10),rnd(1,10),rnd(1,10));
