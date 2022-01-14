@@ -13,7 +13,7 @@ public class Main {
     public static Weapon[] setting() {
         Weapon[] weapon = new Weapon[6];
         weapon[0] = new Guns(rnd(1, 10), rnd(1, 10), rnd(1, 10));
-        weapon[1] = new Minigun(rnd(1, 10), rnd(1, 10), rnd(1, 9), rnd(1, 3));
+        weapon[1] = new Minigun(rnd(1, 10), rnd(1, 10), rnd(1, 10), rnd(1, 9));
         weapon[2] = new SniperRifle(rnd(1, 10), rnd(1, 10), rnd(1, 10));
         weapon[3] = new CombatKnife(rnd(1, 9));
         weapon[4] = new AssaultRifle(rnd(1, 10), rnd(1, 10), rnd(1, 10));

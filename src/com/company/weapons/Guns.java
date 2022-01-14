@@ -4,12 +4,12 @@ public class Guns extends Weapon {
     private String shot;
 
     public Guns(int firingRange, int firingRate, int shotEnergy) {
-        super((firingRange > 3) ? 3 : firingRange, firingRate, shotEnergy);
+        super(Math.min(firingRange, 3), firingRate, shotEnergy);
     }
 
     @Override
     public String getShot() {
-        this.firingRange = this.firingRange > 3 ? 3 : this.firingRange;
+        this.firingRange = Math.min(this.firingRange, 3);
         StringBuilder builderShot = new StringBuilder();
         for (int range = 1; range <= this.firingRange; range++) {
 
