@@ -1,61 +1,63 @@
 package com.company.weapons;
 
-import com.company.Weapon;
-
 public class Minigun extends Weapon {
-    private final int MINSHOTENERGY = 1;
-    private final int MAXSHOTENERGY = 9;
-    private int accuraty;
+    private final int MIN_SHOT_ENERGY = 1;
+    private final int MAX_SHOT_ENERGY = 9;
+    private int accurate;
     private String caliber;
-    public Minigun(int firingRange, int firingRate, int shotEnergy, int accuracy){
+
+    public Minigun(int firingRange, int firingRate, int shotEnergy, int accuracy) {
         super(firingRange, firingRate, shotEnergy);
-        this.accuraty = accuracy;
-        if (this.shotEnergy <= MINSHOTENERGY) super.shotEnergy = MINSHOTENERGY;
-        if (this.shotEnergy >= MAXSHOTENERGY) super.shotEnergy = MAXSHOTENERGY;
+        this.accurate = accuracy;
+        if (this.shotEnergy <= MIN_SHOT_ENERGY) {
+            super.shotEnergy = MIN_SHOT_ENERGY;
+        }
+        if (this.shotEnergy >= MAX_SHOT_ENERGY) {
+            super.shotEnergy = MAX_SHOT_ENERGY;
+        }
     }
 
     @Override
     public String getShot() {
         StringBuilder builderShot = new StringBuilder();
-        switch (this.shotEnergy){
-            case(1):
+        switch (this.shotEnergy) {
+            case (1):
                 caliber = "•";
                 break;
-            case(2):
+            case (2):
                 caliber = "●";
                 break;
-            case(4):
+            case (4):
                 caliber = "◉";
                 break;
-            case(5):
+            case (5):
                 caliber = "◖◗";
                 break;
-            case(6):
+            case (6):
                 caliber = "◖◗";
                 break;
-            case(7):
+            case (7):
                 caliber = "◯";
                 break;
-            case(8):
+            case (8):
                 caliber = "*";
                 break;
-            case(9):
+            case (9):
                 caliber = "⑇┅⑆⑉⑈";
                 break;
         }
-        for (int range = 1; range<= this.firingRange; range++){
-            for (int rate = 1; rate<= this.firingRate; rate++) builderShot.append(caliber);
-            for (int accur = 1; accur<= this.accuraty; accur++) builderShot.append(" ");
+        for (int range = 1; range <= this.firingRange; range++) {
+            for (int rate = 1; rate <= this.firingRate; rate++) builderShot.append(caliber);
+            for (int accur = 1; accur <= this.accurate; accur++) builderShot.append(" ");
         }
-
- //        builderShot.append(" "); ⑉ ⑈ ⑇ ⑆   •
 
         return builderShot.toString();
     }
-    public void setShot (int firingRange, int firingRate, int shotEnergy, int accuracy){
+
+    public void setShot(int firingRange, int firingRate, int shotEnergy, int accuracy) {
         this.shotEnergy = shotEnergy;
         this.firingRange = firingRange;
         this.firingRate = firingRate;
-        this.accuraty = accuracy;
+        this.accurate = accuracy;
     }
 }
