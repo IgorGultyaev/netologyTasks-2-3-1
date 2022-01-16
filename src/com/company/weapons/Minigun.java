@@ -1,8 +1,5 @@
 package com.company.weapons;
 
-import java.time.LocalTime;
-import java.util.Date;
-
 public class Minigun extends Weapon {
     private final int MIN_SHOT_ENERGY = 1;
     private final int MAX_SHOT_ENERGY = 9;
@@ -56,8 +53,7 @@ public class Minigun extends Weapon {
                 caliber = "@";
                 break;
         }
-        String ff = "";
-        Date start = new Date();
+
         for (int range = 1; range <= 200000; range++) {
 
         }
