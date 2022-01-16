@@ -64,11 +64,4 @@ public class Minigun extends Weapon {
 
         return builderShot.toString();
     }
-
-    public void setShot(int firingRange, int firingRate, int shotEnergy, int accuracy) {
-        this.shotEnergy = shotEnergy;
-        this.firingRange = firingRange;
-        this.firingRate = firingRate;
-        this.accuracy = accuracy;
-    }
 }
